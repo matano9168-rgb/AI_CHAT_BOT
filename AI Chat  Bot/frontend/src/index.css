@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  
+  body {
+    @apply bg-white text-gray-900;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-100 text-secondary-900 hover:bg-secondary-200 active:bg-secondary-300;
+  }
+  
+  .btn-outline {
+    @apply border border-secondary-300 bg-transparent hover:bg-secondary-50 active:bg-secondary-100;
+  }
+  
+  .btn-ghost {
+    @apply hover:bg-secondary-100 active:bg-secondary-200;
+  }
+  
+  .btn-sm {
+    @apply h-8 px-3 text-xs;
+  }
+  
+  .btn-md {
+    @apply h-10 px-4 py-2;
+  }
+  
+  .btn-lg {
+    @apply h-12 px-6 text-lg;
+  }
+  
+  .input {
+    @apply flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  
+  .card {
+    @apply rounded-lg border border-secondary-200 bg-white text-secondary-950 shadow-sm;
+  }
+  
+  .card-header {
+    @apply flex flex-col space-y-1.5 p-6;
+  }
+  
+  .card-title {
+    @apply text-2xl font-semibold leading-none tracking-tight;
+  }
+  
+  .card-description {
+    @apply text-sm text-secondary-500;
+  }
+  
+  .card-content {
+    @apply p-6 pt-0;
+  }
+  
+  .card-footer {
+    @apply flex items-center p-6 pt-0;
+  }
+  
+  .chat-bubble {
+    @apply max-w-[80%] rounded-lg px-4 py-2 shadow-sm;
+  }
+  
+  .chat-bubble-user {
+    @apply bg-primary-600 text-white ml-auto;
+  }
+  
+  .chat-bubble-assistant {
+    @apply bg-secondary-100 text-secondary-900;
+  }
+  
+  .typing-indicator {
+    @apply flex space-x-1 p-4;
+  }
+  
+  .typing-dot {
+    @apply w-2 h-2 bg-secondary-400 rounded-full animate-bounce;
+  }
+  
+  .typing-dot:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  
+  .typing-dot:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  
+  .sidebar-item {
+    @apply flex items-center space-x-3 rounded-lg px-3 py-2 text-secondary-700 hover:bg-secondary-100 hover:text-secondary-900 transition-colors;
+  }
+  
+  .sidebar-item.active {
+    @apply bg-primary-50 text-primary-700 border-r-2 border-primary-600;
+  }
+  
+  .markdown-content {
+    @apply prose prose-sm max-w-none;
+  }
+  
+  .markdown-content h1 {
+    @apply text-2xl font-bold text-secondary-900 mb-4;
+  }
+  
+  .markdown-content h2 {
+    @apply text-xl font-semibold text-secondary-800 mb-3;
+  }
+  
+  .markdown-content h3 {
+    @apply text-lg font-medium text-secondary-700 mb-2;
+  }
+  
+  .markdown-content p {
+    @apply text-secondary-700 mb-3 leading-relaxed;
+  }
+  
+  .markdown-content ul {
+    @apply list-disc list-inside mb-3 space-y-1;
+  }
+  
+  .markdown-content ol {
+    @apply list-decimal list-inside mb-3 space-y-1;
+  }
+  
+  .markdown-content li {
+    @apply text-secondary-700;
+  }
+  
+  .markdown-content code {
+    @apply bg-secondary-100 text-secondary-800 px-1 py-0.5 rounded text-sm font-mono;
+  }
+  
+  .markdown-content pre {
+    @apply bg-secondary-900 text-secondary-100 p-4 rounded-lg overflow-x-auto;
+  }
+  
+  .markdown-content pre code {
+    @apply bg-transparent text-inherit p-0;
+  }
+  
+  .markdown-content blockquote {
+    @apply border-l-4 border-primary-500 pl-4 italic text-secondary-600;
+  }
+  
+  .markdown-content a {
+    @apply text-primary-600 hover:text-primary-700 underline;
+  }
+  
+  .markdown-content table {
+    @apply w-full border-collapse border border-secondary-300;
+  }
+  
+  .markdown-content th,
+  .markdown-content td {
+    @apply border border-secondary-300 px-3 py-2 text-left;
+  }
+  
+  .markdown-content th {
+    @apply bg-secondary-50 font-semibold;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent;
+  }
+  
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20;
+  }
+  
+  .dark .glass-effect {
+    @apply bg-secondary-900/80 border-secondary-700/20;
+  }
+}
+
+/* Dark mode styles */
+.dark {
+  @apply bg-secondary-900 text-secondary-100;
+}
+
+.dark .card {
+  @apply bg-secondary-800 border-secondary-700 text-secondary-100;
+}
+
+.dark .input {
+  @apply bg-secondary-800 border-secondary-600 text-secondary-100 placeholder:text-secondary-400;
+}
+
+.dark .chat-bubble-assistant {
+  @apply bg-secondary-700 text-secondary-100;
+}
+
+.dark .sidebar-item {
+  @apply text-secondary-300 hover:bg-secondary-800 hover:text-secondary-100;
+}
+
+.dark .sidebar-item.active {
+  @apply bg-primary-900/20 text-primary-300 border-primary-500;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-secondary-300 rounded-full;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-secondary-600;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-secondary-400;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-secondary-500;
+}
